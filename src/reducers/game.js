@@ -1,23 +1,15 @@
 const gameReducer = (state, action) => {
-  const { name, player } = action
-
-  switch (action.type) {
-    case 'setName':
-      console.log('dispatch setName:', name)
-      console.log('dispatch return', {
-        ...state,
-        currentName: name,
-        usedNames: [...state.usedNames, name],
-      })
+  const { type, currentName, winner } = action
+  switch (type) {
+    case 'setCurrentName':
       return {
-        ...state,
-        currentName: name,
-        usedNames: [...state.usedNames, name],
+        currentName,
+        usedNames: [...state.usedNames, currentName],
       }
     case 'setWinner':
       return {
         ...state,
-        winner: player,
+        winner,
       }
     default:
       break
