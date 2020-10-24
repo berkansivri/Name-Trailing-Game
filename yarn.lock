@@ -8680,6 +8680,16 @@ react-scripts@3.4.3:
   optionalDependencies:
     fsevents "2.1.2"
 
+react-simple-loading@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-simple-loading/-/react-simple-loading-0.0.3.tgz#523083a45e02ddba284f5ad9be1c1e0107c59eb3"
+  integrity sha1-UjCDpF4C3booT1rZvhweAQfFnrM=
+
+react-speech-kit@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-speech-kit/-/react-speech-kit-3.0.1.tgz#8bd936adfe064be1c5a07e2992dfdfd772e80d14"
+  integrity sha512-MXNOciISanhmnxpHJkBOev3M3NPDpW1T7nTc/eGw5pO9cXpoUccRxZkmr/IlpTPbPEneDNeTmbwri/YweyctZg==
+
 react@^16.14.0:
   version "16.14.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"

@@ -1,19 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
+import Game from './Game'
 import Play from './Play'
 
 export default function Start() {
   const [hasPermission, setHasPermission] = useState(false)
-  function onStart() {
+
+  useEffect(() => {
+    console.log(hasPermission)
+  }, [hasPermission])
+
+  const requestPermission = useCallback(() => {
     navigator.mediaDevices
       .getUserMedia({ audio: true })
-      .then(function (stream) {
+      .then(() => {
         setHasPermission(true)
       })
-      .catch(function (err) {
+      .catch((err) => {
         setHasPermission(false)
         alert('You need to give the permission for mic before start the game')
       })
-  }
+  }, [])
 
-  return hasPermission ? <Play /> : <button onClick={onStart}>Start the Game</button>
+  return hasPermission ? <Play /> : <button onClick={requestPermission}>Start the Game</button>
 }
