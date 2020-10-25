@@ -1,5 +1,5 @@
 const gameReducer = (state, action) => {
-  const { type, currentName, winner } = action
+  const { type, currentName, winner, initialState } = action
   switch (type) {
     case 'setCurrentName':
       return {
@@ -11,6 +11,8 @@ const gameReducer = (state, action) => {
         ...state,
         winner,
       }
+    case 'newGame':
+      return { ...initialState }
     default:
       break
   }

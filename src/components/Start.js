@@ -13,8 +13,15 @@ export default function Start() {
       .catch((err) => {
         setHasPermission(false)
         alert('You need to give the permission for mic before start the game')
+        console.error(err)
       })
   }, [])
 
-  return hasPermission ? <Game /> : <button onClick={requestPermission}>Start the Game</button>
+  return hasPermission ? (
+    <Game />
+  ) : (
+    <button className="btn-start" onClick={requestPermission}>
+      Start the Game
+    </button>
+  )
 }
